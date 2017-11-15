@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Drl Tbl</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/drlTbl.js"></script>
+    <script>
+    $(document).ready( function() {
+        $('#myDrilldownTable').drlTbl();
+    });
+    </script>
+  </head>
+
+  <body>
+    <table id="myDrilldownTable">
+      <thead><th>DATA</th><th>DATA2</th></thead>
+      <tr depth="1"><td>a</td><td>1</td></tr>
+      <tr depth="2"><td>b</td><td>2</td></tr>
+      <tr depth="1"><td>c</td><td>1</td></tr>
+      <tr depth="2"><td>d</td><td>2</td></tr>
+      <tr depth="3"><td>e</td><td>3</td></tr>
+      <tr depth="3"><td>f</td><td>3</td></tr>
+      <tr depth="1"><td>g</td><td>1</td></tr>
+
+    </table>
+
+  </body>
+
+</html>

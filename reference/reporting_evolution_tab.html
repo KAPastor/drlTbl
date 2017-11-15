@@ -1,0 +1,76 @@
+<div style="padding: 10px 20px 0" class="background-image">
+  <div class="row">
+
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Evolution Report</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+
+                <div class="x_content">
+                    <div class="row" style="text-align:center;">
+
+                        <div class="col-md-1 col-sm-1 col-xs-12">
+                            <p class="pull-right">Compare Current Scenario </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <select id="compScen" class="form-control" > </select>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-12">
+                            <p class="pull-right">Against Base Scenario </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <select id="baseScen" class="form-control" ></select>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-12">
+                            <p class="pull-right">To Report On </p>
+                            <p id="reportStep" class="pull-right" style="margin-top:5px;display:none;">Step Number </p>
+                            <p id="rateName" class="pull-right" style="margin-top:5px;display:none;">Rate Name </p>
+
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <select id="reportType" class="form-control" ></select>
+                            <select id="reportStep" class="form-control" style="margin-top:5px;display:none;"></select>
+                            <select id="rateName" class="form-control" style="margin-top:5px;display:none;"></select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <button  id="generateReport" type="text" class="btn btn-success pull-right" style="width:190px;" onclick="generateReport();">Generate Report <i id="generateReportIcon" class="fa fa-toggle-right"></i></button>
+                            <!-- <button  id="dumpButton" type="text" class="btn btn-success pull-right" style="width:190px;" onclick="dumpReport();">Dump to .XLSX <i id="dumpReportIcon" class="fa fa-save"></i></button> -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content" >
+                    <div id="reportingPlot"></div>
+                    <div id="" style="width:100%;overflow:scroll">
+                        <table class="table table-striped responsive-utilities jambo_table bulk_action table-bordered" id="reportingTable" >
+                            <thead>
+                                <tr class="headings"></tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
