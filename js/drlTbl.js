@@ -4,7 +4,8 @@
       // Define the default options for the plugin:
       var defaults = {
         prepend: ">",
-        fontScaling: 2
+        fontScaling: 2,
+        startLevel: 3
       };
       var options = $.extend(defaults, options);
 
@@ -17,8 +18,17 @@
         $(item).find('td:first').prepend(prepend_str);
       });
 
-      // Hide all of the level 1 depths
-      this.find("tr[depth][depth!='1']").hide();
+      // Hide everything less than the specified depth.  first find the max depth
+      var maximum = null;
+      this.find("tr[depth]").each(function() {
+        var value = parseFloat($(this).attr('depth'));
+        maximum = (value > maximum) ? value : maximum;
+      });
+      console.log(maximum);
+      for (var i = options.startLevel+1; i <= maximum; i++) {
+        this.find("tr[depth][depth='"+i+"']").hide();
+      }
+
 
        // Finally we will bind a click event to show the subrows based on the click
        this.find("tr[depth]").click(function(){
