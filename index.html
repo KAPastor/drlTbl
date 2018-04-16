@@ -2,50 +2,56 @@
 <html lang="en">
 
   <head>
-    <title>Drl Tbl</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./js/drlTbl.js"></script>
-    <script>
-    $(document).ready( function() {
-        $('#myDrilldownTable').drlTbl();
-    });
-    </script>
+	<title>Drl Tbl</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/drlTbl.js"></script>
+	<script>
+	$(document).ready( function() {
+		$('#myDrilldownTable').drlTbl();
+	});
+	</script>
   </head>
 
   <body>
-    <table id="myDrilldownTable_Original">
-      <thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
-      <tr depth="1"><td>Assets</td><td>All Assets</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="2"><td>Loans</td><td>All Loans</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Personal Loans</td><td>Personal Loans</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="2"><td>Mortgages</td><td>All Mortgages</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Fixed Mortgages</td><td>Fixed</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Float Mortgages</td><td>Float</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="1"><td>Liabilities</td><td>All Liabilities</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="2"><td>Deposits</td><td>All Deposits</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Power Savings</td><td>Savings</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Other Accounts</td><td>All other savings accounts</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="1"><td>Off Balance Sheet</td><td>All OBS</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-    </table>
+	<table id="myDrilldownTable_Original">
+		<thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
+		<tr depth="1"><td>Assets</td><td>All Assets</td><td drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
+		<tr depth="2"><td>Loans</td><td>All Loans</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"</td><td drlappend="Yr"></td></tr>
+		<tr depth="3"><td>Personal Loans</td><td>Personal Loans</td><td drlprepend="$" drlappend="/year">100</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+		<tr depth="2"><td>Mortgages</td><td>All Mortgages</td><td drlprepend="$" drlcalc="sum" drlappend="/year"></td><td></td><td drlappend="Yr"></td></tr>
+		<tr depth="3"><td>Fixed Mortgages</td><td>Fixed</td><td drlprepend="$" drlappend="/year">10</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+		<tr depth="3"><td>Float Mortgages</td><td>Float</td><td drlprepend="$" drlappend="/year">100</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+		<tr depth="1"><td>Liabilities</td><td>All Liabilities</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td></td><td drlappend="Yr"></td></tr>
+		<tr depth="2"><td>Deposits</td><td>All Deposits</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
+		<tr depth="3"><td>Power Savings</td><td>Savings</td><td drlprepend="$" drlappend="/year">20</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+		<tr depth="3"><td>Other Accounts</td><td>All other savings accounts</td><td>100</td><td>3.0</td><td drlappend="Yr">5</td></tr>
+		<tr depth="1"><td>Off Balance Sheet</td><td>All OBS</td><td drlprepend="$" drlappend="/year">100</td><td>3.0</td><td drlappend="Yr">5</td></tr>
+	</table>
 
 
 <br>
+<!-- <table id="myDrilldownTable">
+  <thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
+  <tr depth="1"><td>Liabilities</td><td>All Liabilities</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td></td><td drlappend="Yr"></td></tr>
+  <tr depth="2"><td>Deposits</td><td>All Deposits</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
+  <tr depth="3"><td>Power Savings</td><td>Savings</td><td drlprepend="$" drlappend="/year">20</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+  <tr depth="3"><td>Other Accounts</td><td>All other savings accounts</td><td>100</td><td>3.0</td><td drlappend="Yr">5</td></tr>
+</table> -->
 
-
-    <table id="myDrilldownTable">
-      <thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
-      <tr depth="1"><td>Assets</td><td>All Assets</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="2"><td>Loans</td><td>All Loans</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Personal Loans</td><td>Personal Loans</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="2"><td>Mortgages</td><td>All Mortgages</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Fixed Mortgages</td><td>Fixed</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Float Mortgages</td><td>Float</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="1"><td>Liabilities</td><td>All Liabilities</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="2"><td>Deposits</td><td>All Deposits</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Power Savings</td><td>Savings</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="3"><td>Other Accounts</td><td>All other savings accounts</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-      <tr depth="1"><td>Off Balance Sheet</td><td>All OBS</td><td>100</td><td>3.0%</td><td>5Yr</td></tr>
-    </table>
+	<table id="myDrilldownTable">
+	  <thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
+	  <tr depth="1"><td>Assets</td><td>All Assets</td><td drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
+	  <tr depth="2"><td>Loans</td><td>All Loans</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"</td><td drlappend="Yr"></td></tr>
+	  <tr depth="3"><td>Personal Loans</td><td>Personal Loans</td><td drlprepend="$" drlappend="/year">100</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+	  <tr depth="2"><td>Mortgages</td><td>All Mortgages</td><td drlprepend="$" drlcalc="sum" drlappend="/year"></td><td></td><td drlappend="Yr"></td></tr>
+	  <tr depth="3"><td>Fixed Mortgages</td><td>Fixed</td><td drlprepend="$" drlappend="/year">10</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+	  <tr depth="3"><td>Float Mortgages</td><td>Float</td><td drlprepend="$" drlappend="/year">100</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+	  <tr depth="1"><td>Liabilities</td><td>All Liabilities</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td></td><td drlappend="Yr"></td></tr>
+	  <tr depth="2"><td>Deposits</td><td>All Deposits</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
+	  <tr depth="3"><td>Power Savings</td><td>Savings</td><td drlprepend="$" drlappend="/year">20</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
+	  <tr depth="3"><td>Other Accounts</td><td>All other savings accounts</td><td>100</td><td>3.0</td><td drlappend="Yr">5</td></tr>
+	  <tr depth="1"><td>Off Balance Sheet</td><td>All OBS</td><td drlprepend="$" drlappend="/year">100</td><td>3.0</td><td drlappend="Yr">5</td></tr>
+	</table>
 
   </body>
 
