@@ -1,0 +1,31 @@
+table.drltbl{
+	font-family: 'Nunito', sans-serif;
+	font-size:15px;
+	border: 5px solid #F5F5F5;
+	background-color: #F5F5F5;
+}
+
+table.drltbl th{
+	font-family: 'Oswald', sans-serif;
+	text-align:center;
+}
+
+table.drltbl td{
+	background-color: #F5F5F5;
+}
+
+
+td:nth-child(1) {
+  cursor:pointer;
+  border-right: 2px dashed white;
+  font-style: oblique;
+}
+
+table.drltbl.green th{
+	background-color: #81C784;
+	color:white;
+	padding:3px;
+}
+table.drltbl.green th:nth-child(1){
+	background-color: #66BB6A;
+}
