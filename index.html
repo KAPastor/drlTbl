@@ -4,6 +4,8 @@
   <head>
 	<title>Drl Tbl</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nunito|Oswald" rel="stylesheet">
+	<link rel="stylesheet" href="./css/drlTbl.css">
 	<script src="./js/drlTbl.js"></script>
 	<script>
 	$(document).ready( function() {
@@ -30,15 +32,9 @@
 
 
 <br>
-<!-- <table id="myDrilldownTable">
-  <thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
-  <tr depth="1"><td>Liabilities</td><td>All Liabilities</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td></td><td drlappend="Yr"></td></tr>
-  <tr depth="2"><td>Deposits</td><td>All Deposits</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
-  <tr depth="3"><td>Power Savings</td><td>Savings</td><td drlprepend="$" drlappend="/year">20</td><td drlappend="%">3.0</td><td drlappend="Yr">5</td></tr>
-  <tr depth="3"><td>Other Accounts</td><td>All other savings accounts</td><td>100</td><td>3.0</td><td drlappend="Yr">5</td></tr>
-</table> -->
 
-	<table id="myDrilldownTable">
+
+	<table id="myDrilldownTable" class="drltbl green">
 	  <thead><th>Name</th><th>Description</th><th>Balance</th><th>Coupon</th><th>Duration</th></thead>
 	  <tr depth="1"><td>Assets</td><td>All Assets</td><td drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"></td><td drlappend="Yr"></td></tr>
 	  <tr depth="2"><td>Loans</td><td>All Loans</td><td  drlprepend="$" drlcalc="sum" drlappend="/year"></td><td drlappend="%"</td><td drlappend="Yr"></td></tr>
